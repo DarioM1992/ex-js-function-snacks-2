@@ -28,3 +28,19 @@ console.log("Total:",sumArrowF(4,9));
 const doubleArrowF = num => num * num;
 
 console.log('Il numero al quadrato fa:', doubleArrowF(10));
+
+//SNACK-3 
+// Crea una funzione eseguiOperazione
+// Definisci una funzione eseguiOperazione che accetta tre parametri: due numeri e una funzione operatore (callback). La funzione deve eseguire l'operazione fornita sui due numeri.
+
+function calculation (num1, num2 , operation) {
+    return operation(num1, num2);
+}
+
+function sum(a, b ) { return a + b; }
+function minus(a, b) { return a - b; }
+function multiplier(a, b) { return a * b; }
+
+console.log(calculation(4, 2, sum));
+console.log(calculation(4, 2, minus));
+console.log(calculation(4, 2, multiplier));
