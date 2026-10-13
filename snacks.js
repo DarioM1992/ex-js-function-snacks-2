@@ -81,4 +81,28 @@ function printEverySec(print) {
 printEverySec('tic tac');
 
 
+//SNACK-6 
+//Crea un contatore automatico con setInterval
+// Definisci una funzione creaContatoreAutomatico che accetta un intervallo di tempo e restituisce una funzione che avvia un setInterval, incrementando un contatore e stampandolo.
+
+function createAutomaticCounter(interval) {
+    let counter = 0; 
+    let timer;
+    return function() {
+        timer = setInterval(() => {
+            counter++;
+            console.log(counter);
+        }, interval);
+
+          return timer;
+    };
+}
+
+const startCounter = createAutomaticCounter(1000);
+const timer = startCounter();
+
+setTimeout(() => {
+        clearInterval(timer)
+        console.log('timeout: counter terminated');
+},4000);
 
